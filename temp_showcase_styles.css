@@ -1,0 +1,78 @@
+
+/* ====================================
+   SHOWCASE SECTION (SCROLL ANIMATION)
+   ==================================== */
+.showcase-section {
+    height: 300vh; /* Make it tall to allow scrolling "through" it */
+    position: relative;
+    background-color: var(--dark-bg);
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showcase-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(0.8); /* Start smaller */
+    transition: transform 0.1s linear; /* Smooth update via JS */
+    opacity: 0.5;
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 10;
+}
+
+.showcase-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-out;
+}
+
+.showcase-content h2 {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+}
+
+.showcase-content p {
+    font-size: 24px;
+    color: var(--netflix-red);
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .showcase-content h2 {
+        font-size: 40px;
+    }
+    .showcase-content p {
+        font-size: 18px;
+    }
+}

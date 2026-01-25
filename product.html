@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Netflix Bikes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">NETFLIX</span>
+                <span class="logo-bikes">BIKES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="home-icon-btn" title="Home">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-container">
+                <div class="product-image-container">
+                    <img id="productImage" src="" alt="Bike Model" class="product-main-image">
+                    <div id="productQuote"></div>
+                </div>
+                <div class="product-info-container">
+                    <h1 id="productName" class="product-name"></h1>
+                    <p class="product-price" id="productPrice"></p>
+
+                    <div class="product-description">
+                        <h2>About This Model</h2>
+                        <p id="productDescription"></p>
+                    </div>
+
+                    <div class="product-specs-detail">
+                        <h2>Detailed Specifications</h2>
+                        <ul class="specs-list">
+                            <li><strong>Frame:</strong> Carbon Fiber Monocoque</li>
+                            <li><strong>Weight:</strong> 7.2 kg (15.9 lbs)</li>
+                            <li><strong>Wheel Size:</strong> 700c</li>
+                            <li><strong>Gears:</strong> 11-Speed Shimano</li>
+                            <li><strong>Brakes:</strong> Hydraulic Disc Brakes</li>
+                            <li><strong>Handlebar:</strong> Aero Carbon Fiber</li>
+                            <li><strong>Stem:</strong> Integrated Aero</li>
+                            <li><strong>Saddle:</strong> Premium Racing Saddle</li>
+                            <li><strong>Pedals:</strong> Clipless Compatible</li>
+                        </ul>
+                    </div>
+
+                    <div class="performance-details">
+                        <h2>Performance Details</h2>
+                        <div class="performance-grid">
+                            <div class="performance-item">
+                                <span class="performance-label">Top Speed</span>
+                                <span class="performance-value">65+ km/h</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Aerodynamics</span>
+                                <span class="performance-value">A+ Rating</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Weight</span>
+                                <span class="performance-value">Ultra Light</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Durability</span>
+                                <span class="performance-value">Premium Grade</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accessories-section">
+                        <h2>Accessories</h2>
+                        <div id="accessoriesContainer" class="accessories-grid">
+                            <!-- Dynamically loaded -->
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+                        <button class="buy-now-btn" id="buyNowBtn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews Section -->
+            <div class="reviews-section reviews-container">
+                <h2>Customer Reviews</h2>
+                <!-- Reviews will be rendered dynamically by JS -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NETFLIX BIKES</h3>
+                    <p>Ride the Story. Own the Legend.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Terms of Use</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Legal Notice</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>Email: Bikeflix@gmail.com</p>
+                    <p>Phone: +91 1800-NETFLIX</p>
+                    <p>Address: 123 Bike Street, Mumbai, India</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Subscribe for Updates</h4>
+                    <div class="subscribe-box">
+                        <input type="email" id="emailInput" placeholder="Enter your email" required>
+                        <button id="subscribeBtn" class="subscribe-btn">Subscribe</button>
+                        <p id="subscribeMessage" class="subscribe-message"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creators Button -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button id="globalCreatorsBtn" class="subscribe-btn"
+                    style="width: auto; padding: 10px 30px;">Creators</button>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Netflix Bikes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Creators Modal -->
+    <div id="globalCreatorsModal" class="creators-modal">
+        <div class="creators-content">
+            <span id="closeGlobalCreators" class="close-creators">&times;</span>
+            <h2>Creators</h2>
+            <div class="creators-list">
+                <h3>Created by:</h3>
+                <ul>
+                    <li>Alan Biju</li>
+                    <li>Adhel Ealias</li>
+                    <li>Ajin Ani</li>
+                </ul>
+                <h3>Tools used:</h3>
+                <ul>
+                    <li>ChatGPT</li>
+                    <li>Cursor AI</li>
+                    <li>VS Code</li>
+                </ul>
+                <h3>Disclaimer:</h3>
+                <p style="color: #ccc; font-size: 16px; line-height: 1.5; margin-top: 5px;">
+                    This website is a project built for Web Forge and is NOT an official website.<br>
+                    It is created purely for educational and demonstration purposes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

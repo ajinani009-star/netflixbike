@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Netflix Bikes</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">NETFLIX</span>
+                <span class="logo-bikes">BIKES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="container">
+            <div id="checkoutContent" class="checkout-container">
+                <div>
+                    <h1 class="checkout-title">Checkout</h1>
+
+                    <div class="cart-summary">
+                        <h3>Your Cart</h3>
+                        <div id="cartItems">
+                            <!-- Items injected via JS -->
+                        </div>
+                        <div class="cart-total">
+                            <span>Total</span>
+                            <span id="cartTotalDisplay">₹0</span>
+                        </div>
+                    </div>
+
+                    <form id="checkoutForm" class="checkout-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>State</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>Pincode</label>
+                                <input type="text" required pattern="[0-9]{6}">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" required pattern="[0-9]{10}">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="complete-purchase-btn">Complete Purchase</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="successScreen" class="success-screen">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">Thank You For Purchasing</h2>
+                <div id="quoteDisplay" class="motivational-quote">
+                    <!-- Quote injected via JS -->
+                </div>
+                <a href="index.html" class="home-btn" onclick="clearCart()">Return to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline script for specific checkout page logic not covered in main script.js
+        // We will move this to script.js nicely or keep it here if it's page specific.
+        // Actually, let's keep the logic in script.js as requested for modularity,
+        // but since script.js runs on all pages, we need to ensure it handles this page correctly.
+        // The script.js calls 'initializeCheckoutPage' if form exists.
+    </script>
+</body>
+
+</html>

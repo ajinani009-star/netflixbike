@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal - Netflix Bikes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-section {
+            padding: 120px 20px 80px;
+            background-color: var(--dark-bg);
+            min-height: 100vh;
+            color: var(--light-gray);
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-title {
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--netflix-red);
+            padding-bottom: 15px;
+        }
+
+        .legal-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .legal-content h3 {
+            color: var(--white);
+            margin: 30px 0 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">NETFLIX</span>
+                <span class="logo-bikes">BIKES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="legal-section">
+        <div class="container legal-container">
+            <h1 id="legalTitle" class="legal-title">Loading...</h1>
+            <div id="legalContent" class="legal-content">
+                <!-- Content injected via JS -->
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page');
+            const titleEl = document.getElementById('legalTitle');
+            const contentEl = document.getElementById('legalContent');
+            const footerEl = document.getElementById('legalFooter');
+
+            if (page === 'legal') {
+                if (footerEl) footerEl.style.display = 'block';
+            }
+
+            const contentMap = {
+                'privacy': {
+                    title: 'Privacy Policy',
+                    content: `
+                        <p>At Netflix Bikes, we value your privacy. This policy outlines how we collect, use, and protect your personal information.</p>
+                        <h3>Information Collection</h3>
+                        <p>We collect information you provide directly to us, such as when you create an account, make a purchase, or sign up for our newsletter.</p>
+                        <h3>Use of Information</h3>
+                        <p>We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.</p>
+                        <h3>Data Protection</h3>
+                        <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access or disclosure.</p>
+                    `
+                },
+                'terms': {
+                    title: 'Terms & Conditions',
+                    content: `
+                        <p>Welcome to Netflix Bikes. By accessing our website, you agree to these terms and conditions.</p>
+                        <h3>Use License</h3>
+                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on Netflix Bikes' website for personal, non-commercial transitory viewing only.</p>
+                        <h3>Disclaimer</h3>
+                        <p>The materials on Netflix Bikes' website are provided on an 'as is' basis. Netflix Bikes makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.</p>
+                    `
+                },
+                'cookie': {
+                    title: 'Cookie Policy',
+                    content: `
+                        <p>We use cookies to enhance your experience on our website. By continuing to visit this site you agree to our use of cookies.</p>
+                        <h3>What are Cookies?</h3>
+                        <p>Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser.</p>
+                        <h3>How We Use Cookies</h3>
+                        <p>We use cookies to make our website function properly, to make it more secure, provide better user experience, and understand how the website performs.</p>
+                    `
+                },
+                'legal': {
+                    title: 'Legal Notice',
+                    content: `
+                        <p>Netflix Bikes is a conceptual project and is not affiliated with Netflix Inc.</p>
+                        <h3>Copyright</h3>
+                        <p>All content on this website is for demonstration purposes only. All code is proprietary to the developer.</p>
+                        <h3>Trademarks</h3>
+                        <p>Netflix and other trademarks are the property of their respective owners.</p>
+                        <h3>Project Creators</h3>
+                        <div class="project-creators">
+                          <p><strong>Created by:</strong></p>
+                          <p>
+                            Alan Biju —
+                            <a href="https://github.com/alanbiju-prog" target="_blank" rel="noopener noreferrer">
+                              https://github.com/alanbiju-prog
+                            </a>
+                          </p>
+                          <p>
+                            Adhel Ealias —
+                            <a href="https://github.com/Oyaskoo" target="_blank" rel="noopener noreferrer">
+                              https://github.com/Oyaskoo
+                            </a>
+                          </p>
+                          <p>
+                            Ajin Ani —
+                            <a href="https://github.com/ajinani009-star" target="_blank" rel="noopener noreferrer">
+                              https://github.com/ajinani009-star
+                            </a>
+                          </p>
+                        </div>
+                        <h3>Removal Request</h3>
+                        <p>This website is a conceptual project created for demonstration purposes only. For removal of this website or related content, please contact: <strong>detroitoyasko@gmail.com</strong></p>
+                    `
+                }
+            };
+
+            if (page && contentMap[page]) {
+                titleEl.textContent = contentMap[page].title;
+                contentEl.innerHTML = contentMap[page].content;
+            } else {
+                titleEl.textContent = 'Page Not Found';
+                contentEl.innerHTML = '<p>The requested legal document could not be found.</p>';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page');
+            const titleEl = document.getElementById('legalTitle');
+            const contentEl = document.getElementById('legalContent');
+
+
+            const contentMap = {
+                'privacy': {
+                    title: 'Privacy Policy',
+                    content: `
+                        <p>At Netflix Bikes, we value your privacy. This policy outlines how we collect, use, and protect your personal information.</p>
+                        <h3>Information Collection</h3>
+                        <p>We collect information you provide directly to us, such as when you create an account, make a purchase, or sign up for our newsletter.</p>
+                        <h3>Use of Information</h3>
+                        <p>We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.</p>
+                        <h3>Data Protection</h3>
+                        <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access or disclosure.</p>
+                    `
+                },
+                'terms': {
+                    title: 'Terms & Conditions',
+                    content: `
+                        <p>Welcome to Netflix Bikes. By accessing our website, you agree to these terms and conditions.</p>
+                        <h3>Use License</h3>
+                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on Netflix Bikes' website for personal, non-commercial transitory viewing only.</p>
+                        <h3>Disclaimer</h3>
+                        <p>The materials on Netflix Bikes' website are provided on an 'as is' basis. Netflix Bikes makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.</p>
+                    `
+                },
+                'cookie': {
+                    title: 'Cookie Policy',
+                    content: `
+                        <p>We use cookies to enhance your experience on our website. By continuing to visit this site you agree to our use of cookies.</p>
+                        <h3>What are Cookies?</h3>
+                        <p>Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser.</p>
+                        <h3>How We Use Cookies</h3>
+                        <p>We use cookies to make our website function properly, to make it more secure, provide better user experience, and understand how the website performs.</p>
+                    `
+                },
+                'legal': {
+                    title: 'Legal Notice',
+                    content: `
+                        <p>Netflix Bikes is a conceptual project and is not affiliated with Netflix Inc.</p>
+                        <h3>Copyright</h3>
+                        <p>All content on this website is for demonstration purposes only. All code is proprietary to the developer.</p>
+                        <h3>Trademarks</h3>
+                        <p>Netflix and other trademarks are the property of their respective owners.</p>
+                        <h3>Project Creators</h3>
+                        <div class="project-creators">
+                          <p><strong>Created by:</strong></p>
+                          <p>
+                            Alan Biju —
+                            <a href="https://github.com/alanbiju-prog" target="_blank" rel="noopener noreferrer">
+                              https://github.com/alanbiju-prog
+                            </a>
+                          </p>
+                          <p>
+                            Adhel Ealias —
+                            <a href="https://github.com/Oyaskoo" target="_blank" rel="noopener noreferrer">
+                              https://github.com/Oyaskoo
+                            </a>
+                          </p>
+                          <p>
+                            Ajin Ani —
+                            <a href="https://github.com/ajinani009-star" target="_blank" rel="noopener noreferrer">
+                              https://github.com/ajinani009-star
+                            </a>
+                          </p>
+                        </div>
+                    `
+                }
+            };
+
+            if (page && contentMap[page]) {
+                titleEl.textContent = contentMap[page].title;
+                contentEl.innerHTML = contentMap[page].content;
+            } else {
+                titleEl.textContent = 'Page Not Found';
+                contentEl.innerHTML = '<p>The requested legal document could not be found.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>
