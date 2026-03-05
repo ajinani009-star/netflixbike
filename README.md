@@ -11,5 +11,6 @@ Tech Stack:
 - Cursor AI, ChatGPT
 
 Purpose:
-Educational & demonstration project (Web Forge)
+Educational & demonstration project (Web Forge).
+vibe coded website
   
