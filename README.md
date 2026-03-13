@@ -13,4 +13,4 @@ Tech Stack:
 Purpose:
 Educational & demonstration project (Web Forge).
 vibe coded website
-  
+This is a website that showcase diffrent cycle in collabration with netflix
